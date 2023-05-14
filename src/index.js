@@ -256,7 +256,7 @@ if (shoppingList.length > 0) {
   bookListEl.innerHTML = shoppingList
     .map(({ book_image, title, list_name, description, author, buy_links }) => {
       const linksToShow = [0, 1, 3];
-      const buyLinks = buy_links.filter((link, index) =>
+      const buyLinks = buy_links.filter((index) =>
         linksToShow.includes(index)
       );
       return `
@@ -286,6 +286,6 @@ if (shoppingList.length > 0) {
   bookListEl.innerHTML = `
     <div>
        <p>This page is empty, add some books and proceed to order.</p>
-       <image src="/images/img_1.jpg" />
+       <img src="/images/img_1.jpg" />
      </div>`;
 }
