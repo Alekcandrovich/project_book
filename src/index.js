@@ -245,7 +245,7 @@ const byBooks = [
 
 function onLocal(evt) {
   localStorage.setItem('local', JSON.stringify(byBooks));
-  // console.log(JSON.parse(localStorage.getItem('local')));
+  console.log(JSON.parse(localStorage.getItem('local')));
 }
 
 const shoppingList = JSON.parse(localStorage.getItem('local')) || [];
@@ -289,3 +289,13 @@ if (shoppingList.length > 0) {
        <img src="/images/img_1.jpg" />
      </div>`;
 }
+
+const removeBookButtons = document.querySelectorAll('.remove-book');
+
+removeBookButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    shoppingList.splice(index, 1);
+    localStorage.setItem('local', JSON.stringify(shoppingList));
+    button.parentElement.remove();
+  });
+});
