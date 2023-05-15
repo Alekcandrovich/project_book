@@ -256,7 +256,7 @@ if (shoppingList.length > 0) {
   bookListEl.innerHTML = shoppingList
     .map(({ book_image, title, list_name, description, author, buy_links }) => {
       const linksToShow = [0, 1, 3];
-      const buyLinks = buy_links.filter((index) =>
+      const buyLinks = buy_links.filter((link, index) =>
         linksToShow.includes(index)
       );
       return `
