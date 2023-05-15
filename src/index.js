@@ -261,8 +261,7 @@ if (shoppingList.length > 0) {
       );
       return `
         <div class="book-card">
-            <img src="${
-              book_image ? book_image : './images/img-2.jpg'}"
+            <img src="${book_image ? book_image : './images/img-2.jpg'}"
               class="book-cover" alt="${title}"/>
             <h2 class="book-title">${title}</h2>
             <h3 class="book-category">${list_name}</h3>
@@ -271,15 +270,15 @@ if (shoppingList.length > 0) {
             }</p>
             <p class="book-author">${author}</p>
             <button class="remove-book">Удалить из Shopping list</button>
-        </div>
-        <ul class="book-links">
+          <ul class="book-links">
             ${buyLinks
               .map(
                 ({ name, url }) =>
                   `<li><a href=${url} target="_blank">${name}</a></li>`
               )
               .join('')}
-        </ul>`;
+          </ul>
+        </div>`;
     })
     .join('');
   } else {
